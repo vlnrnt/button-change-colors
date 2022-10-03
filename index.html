@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my project</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="body" class="body">
+    <div>
+      <button id="firstButton">кнопка раз</button>
+      <button id="secondButton">кнопка два</button>
+      <button id="thirdButton">кнопка три</button>
+    </div>
+    <script>
+      // const button1 = document.getElementById("firstButton");
+      // const button2 = document.getElementById("secondButton");
+      // const button3 = document.getElementById("thirdButton");
+
+      // const body = document.getElementById("body");
+      // button1.onclick = function () {
+      //   body.style.backgroundColor = "red";
+      // };
+      // button2.onclick = function () {
+      //   body.style.backgroundColor = "green";
+      // };
+      // button3.onclick = function () {
+      //   body.style.backgroundColor = "blue";
+      // };
+
+      let red = 0;
+      let green = 0;
+      let blue = 0;
+
+      const step = 25.5;
+      const maxVal = 255;
+
+      function inrcreaseRed() {
+        if (red < maxVal - step) {
+          red += step;
+        }
+        return red;
+      }
+
+      function inrcreaseGreen() {
+        if (green < maxVal - step) {
+          green += step;
+        }
+        return green;
+      }
+
+      function inrcreaseBlue() {
+        if (blue < maxVal - step) {
+          blue += step;
+        }
+        return blue;
+      }
+
+      const button1 = document.getElementById("firstButton");
+      const button2 = document.getElementById("secondButton");
+      const button3 = document.getElementById("thirdButton");
+
+      button1.onclick = function () {
+        let color = inrcreaseRed();
+        let rgb = `rgb(${color}, 0, 0)`;
+        body.style.backgroundColor = rgb;
+      };
+
+      button2.onclick = function () {
+        let color = inrcreaseGreen();
+        let rgb = `rgb(0, ${color}, 0)`;
+        body.style.backgroundColor = rgb;
+      };
+
+      button3.onclick = function () {
+        let color = inrcreaseBlue();
+        let rgb = `rgb(0, 0, ${color})`;
+        body.style.backgroundColor = rgb;
+      };
+    </script>
+  </body>
+</html>
